@@ -5,18 +5,18 @@ import Home from "./pages/Home.jsx";
 import Footer from "./components/footer.jsx";
 import GridView from "./pages/gridview.jsx";
 import ProductDeatils from "./pages/prodDetails.jsx";
-
+import Cart from "./pages/cart.jsx";
 export default function App() {
 
 
   return (
     <div className="">
       <Navbar />
-      <ProductDeatils/>
+      <Cart/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/product-list" element={<GridView />} />
-        <Route/>
+        {/* <Route path="/" element={<Home/>}/>
+        <Route path="/product-list" element={<GridView />} /> */}
+        <Route path="/product-detail" element={<ProductDeatils/>}/>
         <Route/>
         <Route/>
       </Routes>

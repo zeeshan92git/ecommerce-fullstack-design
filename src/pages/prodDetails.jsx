@@ -208,7 +208,6 @@ function ProductDeatils() {
 
                     </div>
 
-
                 </div>
 
                 <div className='flex w-1/4 flex-col gap-3  border border-gray-300 p-3 rounded'>
@@ -248,6 +247,7 @@ function ProductDeatils() {
                 </div>
 
             </div>
+
             <RelatedProducts />
 
             <div className='flex items-start gap-2 mt-4'>
