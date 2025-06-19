@@ -2,25 +2,28 @@ import React from 'react'
 
 function SupplierQuote() {
     return (
-        <div className="w-full h-[400px] bg-[url('/images/s-quote.jpeg')] bg-cover bg-center relative mt-6 max-w-7xl mx-auto rounded overflow-hidden">
+        <div className="w-full sm:h-[400px] h-[250px] bg-[url('/images/s-quote.jpeg')] bg-cover bg-center relative mt-6 max-w-7xl mx-auto rounded overflow-hidden">
 
             <div className="absolute inset-0 bg-gradient-to-r from-sky-600/100 to-sky-300/80 z-0" />
 
             {/* Main content */}
             <div className="relative z-10 flex items-start justify-between h-full p-6">
 
-                <div className="w-1/2 text-white ">
+                <div className="w-full sm:w-1/2 text-white ">
                     <p className="text-4xl font-semibold mb-4 leading-snug">
                         An easy way to send <br /> requests to all suppliers
                     </p>
-                    <p className="text-lg">
+                    <p className="hidden sm:block text-lg">
                         Lorem ipsum dolor sit amet, <br />
                         consectetur adipisicing elit. Reiciendis sit velit totam.
                     </p>
+                    <button className="sm:hidden block px-6 py-2 bg-blue-600 text-white text-lg rounded-md hover:bg-blue-700 transition duration-200 w-fit">
+                        Send inquiry
+                    </button>
                 </div>
 
 
-                <div className="w-1/2 bg-white rounded shadow-md p-8 ml-8 flex flex-col gap-4 max-w-md">
+                <div className="w-1/2 bg-white rounded shadow-md p-8 ml-8 hidden sm:flex flex-col gap-4 max-w-md">
                     <p className="text-xl font-bold text-gray-800">Send quote to Suppliers</p>
 
                     {/* Item Selector */}
@@ -35,22 +38,20 @@ function SupplierQuote() {
                         <option>Machinery Tools</option>
                     </select>
 
-
                     <textarea
                         placeholder="Type more details..."
                         maxLength={100}
-                        className="border border-gray-300 rounded-md px-4 py-2 h-20 resize-none"
+                        className="border border-gray-300 rounded-md px-4 py-2 h-20 resize-none outline-none"
                     />
-
 
                     {/* Quantity & Unit */}
                     <div className="flex gap-4">
                         <input
                             type="text"
                             placeholder="Quantity"
-                            className="border border-gray-300 rounded-md px-4 py-2 w-1/2"
+                            className="border border-gray-300 rounded-md px-4 py-2 w-1/2 outline-none"
                         />
-                        <select className="border border-gray-300 rounded-md px-4 py-2 w-1/2">
+                        <select className="border border-gray-300 rounded-md px-4 py-2 w-1/2 cursor-pointer outline-none">
                             <option>Pcs</option>
                             <option>1</option>
                             <option>2</option>
@@ -63,6 +64,7 @@ function SupplierQuote() {
                         Send inquiry
                     </button>
                 </div>
+                
             </div>
         </div>
     )

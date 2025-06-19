@@ -11,13 +11,11 @@ export default function App() {
 
   return (
     <div className="">
-      <Navbar />
-      <Cart/>
       <Routes>
-        {/* <Route path="/" element={<Home/>}/>
-        <Route path="/product-list" element={<GridView />} /> */}
+        <Route path="/" element={<Home/>}/>
+        <Route path="/product-list" element={<GridView />} />
         <Route path="/product-detail" element={<ProductDeatils/>}/>
-        <Route/>
+        <Route path="/my-cart" element={<Cart/>}/>
         <Route/>
       </Routes>
       

@@ -32,26 +32,32 @@ const shipflags = [
 ];
 
 function ExtraServices() {
-    
-    return (
-        <>
-            <section className="max-w-7xl mx-auto px-4 py-8 mt-4 bg-white ">
-                <h2 className="text-3xl font-bold mb-6">Our extra services</h2>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+    return (
+        <div className="bg-white">
+            <section className="max-w-7xl mx-auto px-4 py-6 bg-white">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-5">Our Extra Services</h2>
+
+                <div className="grid grid-cols-2  lg:grid-cols-4 gap-6">
                     {services.map((serv, index) => {
                         const IconComponent = iconMap[serv.icon];
                         return (
-                            <div key={index} className='rounded-lg overflow-hidden shadow-sm border'>
+                            <div key={index} className="rounded-lg overflow-hidden shadow-sm border hover:shadow-md transition duration-300">
+                                {/* Image + Icon Section */}
                                 <div className="relative">
+                                    <img src={serv.img} alt={serv.descr} className="w-full h-32 sm:h-36 object-cover"/>
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/50 z-0" />
-                                    <img src={serv.img} alt="img" className='w-full h-28  object-cover' />
-                                    <div className="absolute -bottom-5 right-5 bg-blue-200 w-12 h-12 rounded-full flex items-center justify-center shadow-md">
-                                        {IconComponent && <IconComponent className="text-xl text-black" />}
+                                    <div className="absolute -bottom-5 right-5 bg-blue-200 w-12 h-12 rounded-full flex items-center justify-center shadow-md z-10">
+                                        {IconComponent && (
+                                            <IconComponent className="text-xl text-black" />
+                                        )}
                                     </div>
                                 </div>
-                                <div className="p-4 pt-8">
-                                    <p className="text-gray-800 font-medium text-lg">{serv.descr}</p>
+                                {/* Description Section */}
+                                <div className="p-4 pt-8 bg-white">
+                                    <p className="text-gray-800 font-medium text-base sm:text-lg">
+                                        {serv.descr}
+                                    </p>
                                 </div>
                             </div>
                         );
@@ -59,22 +65,16 @@ function ExtraServices() {
                 </div>
             </section>
 
-            <section className="max-w-7xl mx-auto px-4 py-8 mt-4 bg-white">
-                <h2 className="text-3xl font-bold mb-6">Suppliers by region</h2>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <section className="max-w-7xl mx-auto px-4 py-6 mt-4 bg-white">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6">Suppliers by region</h2>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                     {shipflags.map((item, index) => (
-                        <div
-                            key={index}
-                            className="flex items-center gap-4"
-                        >
-                            <img
-                                src={item.flag}
-                                alt={item.name}
-                                className="w-12 h-8 object-cover rounded-sm border"
-                            />
+                        <div key={index} className="flex items-center gap-4 w-full sm:w-auto">
+                            <img src={item.flag} alt={item.name} className="w-12 h-8 object-cover rounded-sm border" />
                             <div>
-                                <p className="text-xl font-bold">{item.name}</p>
+                                <p className="text-base sm:text-lg font-semibold">{item.name}</p>
                                 <p className="text-sm text-gray-600">{item.company}</p>
                             </div>
                         </div>
@@ -82,7 +82,8 @@ function ExtraServices() {
                 </div>
             </section>
 
-        </>
+
+        </div>
     );
 }
 
