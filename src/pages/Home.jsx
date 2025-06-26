@@ -8,12 +8,18 @@ import Recommenditems from "../components/recommended.jsx";
 import ExtraServices from "../components/extraserv.jsx";
 import Navbar from '../components/navbar.jsx';
 import MobileNavbar from '../components/mobile-navbar.jsx';
+import { useEffect } from "react";
+
+
 
 function Home() {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <div>
-            <Navbar />
-            <MobileNavbar showBackArrow = {false} categoryName = ""/>
+            <Navbar cart={false} />
+            <MobileNavbar showBackArrow={false} categoryName="" />
             <Hero />
             <DealsOffer />
             <Homeoutdoor />

@@ -1,43 +1,47 @@
-import React from 'react';
-
-const items = [
-  { price: '10.30', img: '/images/t-1.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '10.30', img: '/images/t-2.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '12.34', img: '/images/t-3.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '34.5', img: '/images/t-4.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '12.90', img: '/images/t-5.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '23.45', img: '/images/t-6.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '56.60', img: '/images/t-7.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '12.35', img: '/images/t-8.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '10.25', img: '/images/t-9.jpeg', descr: 'T-Shirts for men with different colors' },
-  { price: '10.25', img: '/images/watch.jpeg', descr: 'T-Shirts for men with different colors' }
-];
-console.log(items.length);
-
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+import { Link } from 'react-router-dom';
 
 function Recommenditems() {
+
+  const { productsData } = useContext(AppContext);
+  console.log("recommend\n", productsData);
+
+  const recommendedItems = productsData.filter(p => p.rating > 4.5);
+  console.log(recommendedItems);
+
   return (
 
     <section className="max-w-7xl mx-auto px-4 py-8  mt-4">
       <h2 className="text-3xl font-bold mb-4">Recommended Items</h2>
-
-       {/* Grid layout: row-wise layout will be handled by CSS */}
+      {/* Grid layout: */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 items-start mb-6">
-        {items.map((item, index) => (
-          <div
+
+        {recommendedItems.map((item, index) => (
+          <Link
             key={index}
-            className="bg-white border border-gray-300 rounded-lg shadow-sm p-4 w-full flex flex-col gap-2 items-center"
+            to="/product-list"
+            state={{ category: item.category?.name }}
+            className="border border-gray-200 rounded-lg shadow-sm bg-white w-full flex flex-col items-center p-4 gap-3 hover:shadow-md transition-shadow duration-200"
           >
-            <img src={item.img} alt="img" className="w-40 h-44 object-contain" />
-            <div className="text-[17px] flex flex-col items-start text-center">
-              <span className="font-medium text-lg">${item.price}</span>
-              <p className="text-stone-400 mt-2">{item.descr}</p>
+            {/* Image */}
+            <div className="sm:w-48 sm:h-36 w-32 h-32 rounded-md overflow-hidden bg-gray-100">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
+
+            {/* Info */}
+            <div className="w-full text-left space-y-1">
+              <p className="text-stone-800 font-bold sm:text-xl text-lg truncate">{item.name}</p>
+              <p className="sm:text-lg text-[15px] font-semibold text-stone-500">$ {item.price}</p>
+            </div>
+          </Link>
         ))}
+        
       </div>
-
-
     </section >
   )
 }

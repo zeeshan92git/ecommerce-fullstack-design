@@ -36,20 +36,20 @@ function Foot() {
                 {/* Logo & Description */}
                 <div className="flex flex-col gap-4 max-w-md">
                     <div className="flex items-center gap-2 p-2">
-                        <div className="bg-indigo-500 p-2 rounded-md">
-                            <LiaShoppingBagSolid className="text-3xl text-white" />
+                        <div className="bg-blue-500 p-2 rounded-md">
+                            <LiaShoppingBagSolid className="text-3xl text-sky-200" />
                         </div>
-                        <p className="text-2xl italic md:text-3xl text-indigo-500 font-extrabold">𝓢𝓱𝓸𝓹𝔃𝔂</p>
+                        <p className="text-2xl  md:text-3xl text-sky-400 font-extrabold">Brand</p>
                     </div>
                     <p className="text-sm text-gray-600">
                         Best information about the company goes here. But for now, Lorem ipsum is used as placeholder content.
                     </p>
                     <div className="flex items-center gap-3 text-2xl text-stone-400">
-                        <a href="#"><FaFacebook className="hover:text-blue-500" /></a>
-                        <a href="#"><AiFillTwitterCircle className="hover:text-black" /></a>
-                        <a href="#"><FaLinkedin className="hover:text-blue-500" /></a>
-                        <a href="#"><FaInstagramSquare className="hover:text-red-500" /></a>
-                        <a href="#"><FaYoutube className="hover:text-red-500" /></a>
+                        <a href="https://www.facebook.com" target='_blank'><FaFacebook className="hover:text-blue-500" /></a>
+                        <a href="https://twitter.com" target='_blank'><AiFillTwitterCircle className="hover:text-black" /></a>
+                        <a href="https://www.linkedin.com" target='_blank'><FaLinkedin className="hover:text-blue-500" /></a>
+                        <a href="https://www.instagram.com" target='_blank'><FaInstagramSquare className="hover:text-red-500" /></a>
+                        <a href="https://www.youtube.com" target='_blank'><FaYoutube className="hover:text-red-500" /></a>
                     </div>
                 </div>
 
@@ -57,10 +57,10 @@ function Foot() {
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 text-gray-700 flex-grow">
                     {links.map((section, idx) => (
                         <div key={idx}>
-                            <h2 className="font-semibold mb-2 text-lg text-gray-900">{section.title}</h2>
+                            <h2 className="font-semibold  mb-2 text-lg text-gray-900">{section.title}</h2>
                             <ul className="flex flex-col text-sm gap-1">
                                 {section.links.map((link, linkIdx) => (
-                                    <a key={linkIdx} href="#" className="text-stone-400 hover:text-black">{link}</a>
+                                    <a key={linkIdx} href="/about" className="text-stone-400 hover:text-black">{link}</a>
                                 ))}
                             </ul>
                         </div>
@@ -68,11 +68,11 @@ function Foot() {
                 </div>
 
                 {/* App Download */}
-                <div className="flex flex-col items-start gap-3">
+                <div className="flex flex-col items-start">
                     <h2 className="font-semibold text-lg text-gray-900">Get App</h2>
-                    <div className="flex flex-col gap-2">
-                        <img src="/images/app-store.png" alt="App Store" className="w-32 h-10 object-cover rounded-md" />
-                        <img src="/images/g-play.png" alt="Google Play" className="w-32 h-10 object-cover rounded-md" />
+                    <div className="w-32 h-32  rounded-md">
+                        <img src="https://res.cloudinary.com/dophfzeep/image/upload/v1750921032/g-aaple-removebg-preview_zcaac2.png" alt="App Store" 
+                        className="w-full h-full object-fill rounded-md" />
                     </div>
                 </div>
             </div>

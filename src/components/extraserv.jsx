@@ -12,10 +12,10 @@ const iconMap = {
 };
 
 const services = [
-    { icon: 'IoIosSearch', img: '/images/es-1.jpeg', descr: 'Source from Industry Hubs' },
-    { icon: 'BiBox', img: '/images/es-2.jpeg', descr: 'Customize Your Products' },
-    { icon: 'IoMdSend', img: '/images/es-3.jpeg', descr: 'Fast, reliable shipping by ocean or air' },
-    { icon: 'BsShieldShaded', img: '/images/es-4.jpeg', descr: 'Product monitoring and inspection' }
+    { icon: 'IoIosSearch', img: 'https://res.cloudinary.com/dophfzeep/image/upload/v1750439442/es-1_kbd2ec.jpg', descr: 'Source from Industry Hubs' },
+    { icon: 'BiBox', img: 'https://res.cloudinary.com/dophfzeep/image/upload/v1750439457/es-2_izxndg.jpg', descr: 'Customize Your Products' },
+    { icon: 'IoMdSend', img: 'https://res.cloudinary.com/dophfzeep/image/upload/v1750439562/es-3_gkkvg3.jpg', descr: 'Fast, reliable shipping by ocean or air' },
+    { icon: 'BsShieldShaded', img: 'https://res.cloudinary.com/dophfzeep/image/upload/v1750439579/es-4_kohl0g.jpg', descr: 'Product monitoring and inspection' }
 ];
 
 const shipflags = [
