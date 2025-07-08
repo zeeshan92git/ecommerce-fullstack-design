@@ -3,7 +3,7 @@ import { MdLock } from "react-icons/md";
 import { PiVanFill } from "react-icons/pi";
 import { MdOutlineMessage } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
-import { GoArrowLeft } from "react-icons/go";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { SlOptionsVertical } from "react-icons/sl";
 import { AiOutlineMinus } from "react-icons/ai";
 import { IoAddOutline } from "react-icons/io5";
@@ -156,11 +156,11 @@ function Cart() {
     return (
         <>
             <Navbar cart={true} />
-            <div className='sm:max-w-7xl w-full sm:mx-20 mx-4 sm:px-0 px-2 '>
+            <div className='sm:max-w-7xl w-full sm:mx-20 sm:px-0 px-2 '>
 
                 <h1 className='sm:block hidden text-[24px] font-bold mb-5 mt-5 mx-4'>My cart ({cartItems.length})</h1>
-                <Link to="/product-list" className='sm:hidden flex items-center gap-3 text-[24px] font-bold mb-5 mt-5'>
-                    <GoArrowLeft className='text-xl' />
+                <Link to="/" className='sm:hidden flex items-center gap-3 text-[24px] font-bold mb-5 mt-5'>
+                    <FaArrowLeftLong className='text-2xl'/>
                     <h1>Shopping Cart</h1>
                 </Link>
 

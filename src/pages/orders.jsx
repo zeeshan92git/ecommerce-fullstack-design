@@ -3,11 +3,14 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 function Orders() {
     const { token, backEndURL } = useContext(AppContext);
     const [orders, setOrders] = useState([]);
     console.log(orders);
+
     const getOrders = async () => {
         try {
             const { data } = await axios.get(backEndURL + '/api/order/get-order', {
@@ -24,14 +27,17 @@ function Orders() {
     };
 
     useEffect(() => {
-        getOrders();
+        if (token) getOrders();
     }, []);
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-8">
-            <h2 className="text-2xl font-bold mb-4">My Orders</h2>
+            <p className="flex items-center gap-2 text-2xl font-bold mb-4">
+                <Link to="/"><FaArrowLeftLong/></Link>
+                My Orders
+            </p>
             {orders.length === 0 ? (
-                <p className="text-stone-500">You have no orders yet.</p>
+                    <p className="text-stone-500">You have no orders yet.</p>
             ) : (
                 orders.map((order, i) => (
                     <div key={i} className="border border-gray-300 rounded-md p-4 mb-4 bg-white shadow-sm">

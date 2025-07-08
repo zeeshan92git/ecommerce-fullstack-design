@@ -146,11 +146,11 @@ function Gadgets() {
             p-3 flex-shrink-0 bg-white`}
               >
                 <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 bg-gray-100 rounded overflow-hidden">
+                  <div className="w-32 h-32 bg-gray-100 rounded overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded"
                     />
                   </div>
                   <div className="flex flex-col items-start">

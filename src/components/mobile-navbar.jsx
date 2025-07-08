@@ -30,14 +30,14 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
     const { token, userData } = useContext(AppContext);
     //console.log({token , userData});
     return (
-        <>
+        <div className='mx-2'>
             {/* Top Navbar Row */}
-            <div className={`flex sm:hidden items-center justify-between  mt-2 ${showSelection ? '' : 'mt-0 p-0'} mx-4 w-full p-2`}>
+            <div className={`flex sm:hidden items-center justify-between  mt-2 ${showSelection ? '' : 'mt-0 p-0'}  w-full`}>
 
                 <div className='flex items-center gap-2'>
                     {showBackArrow ? (
                         <>
-                            <FaArrowLeftLong className='text-xl text-gray-700' onClick={() => navigation(route)} />
+                            <Link to={route}><FaArrowLeftLong className='text-2xl'/></Link>
                             <p className="text-lg font-semibold text-gray-700">{categoryName}</p>
                         </>
                     ) : (
@@ -45,9 +45,9 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
                             <MdMenu className='text-2xl ' onClick={() => setIsOpen(true)} />
                             <div className="flex items-center gap-1">
                                 <div className="bg-blue-500 p-1 rounded">
-                                    <LiaShoppingBagSolid className="text-xl  text-sky-400" />
+                                    <LiaShoppingBagSolid className="text-[20px]  text-sky-400" />
                                 </div>
-                                <p className="text-[20px]  text-sky-500 font-bold">Brand</p>
+                                <p className="text-[24px]  text-sky-500 font-bold">Brand</p>
                             </div>
                         </>
                     )}
@@ -55,11 +55,11 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
 
                 <div className={`flex items-center ${showSelection ? '' : 'gap-4'} gap-3 text-black mr-2`}>
                     <Link to="/my-cart" className="hover:text-blue-500 transition cursor-pointer">
-                        <AiOutlineShoppingCart className="text-lg" />
+                        <AiOutlineShoppingCart className="text-[20px]" />
                     </Link>
                     <Link to="/my-profile" className="hover:text-blue-500 transition cursor-pointer">
                         {userData && userData.image ? (<img src={userData.image} alt={userData.name} className='w-7 h-7 rounded-full' />)
-                            : (<CgProfile className='text-lg' />)}
+                            : (<CgProfile className='text-[20px]' />)}
                     </Link>
                 </div>
             </div>
@@ -70,7 +70,7 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
 
             {/* Mobile Search Bar */}
             {showSelection &&
-                <div className='sm:hidden mt-2  flex items-center gap-2 border border-stone-300 rounded-md px-3 py-2 mx-2 '>
+                <div className='sm:hidden mt-4  flex items-center gap-2 border border-stone-300 rounded-md p-1'>
                     <IoIosSearch className='text-lg text-stone-400' />
                     <input
                         type="text"
@@ -82,7 +82,7 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
 
             {/* Categories Row */}
             {showSelection &&
-                <div className='sm:hidden mt-2  flex items-center overflow-x-auto gap-2 mx-2 p-1'>
+                <div className='sm:hidden mt-4  flex items-center overflow-x-auto gap-2 p-1'>
                     {categories.map((cat, index) => (
                         <button
                             key={index}
@@ -101,7 +101,7 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
                 </div>
             }
 
-        </>
+        </div>
     )
 }
 

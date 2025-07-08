@@ -74,8 +74,8 @@ function Homeoutdoor() {
                     <h1 className="text-2xl text-black font-bold px-2">Home and Outdoor</h1>
 
                     {/* Scrollable Card Container */}
-                    <div className="mt-4 overflow-x-auto scrollbar-hide px-2">
-                        <div className="flex border border-stone-300 w-max rounded-md overflow-hidden">
+                    <div className="mt-4 overflow-x-auto scrollbar-hide  px-2">
+                        <div className="flex border border-stone-300 bg-gray-100  w-max rounded-md overflow-hidden">
                             {homeOutdoorItems.map((item, index) => (
                                 <Link
                                     key={index}

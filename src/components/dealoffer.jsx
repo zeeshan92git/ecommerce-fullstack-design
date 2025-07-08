@@ -10,7 +10,7 @@ function DealsOffer() {
   const dealOfferProducts = productsData.filter(p => Math.round(((p.oldPrice - p.price) / p.oldPrice * 100)) > 20.0);
   //console.log("dealOfferProducts \n", dealOfferProducts);
   // Set your deal end time here
-  const dealEndTime = new Date("2025-07-10T23:59:59");
+  const dealEndTime = new Date("2025-08-30T23:59:59");
   const [timeLeft, setTimeLeft] = useState({
     days: '00',
     hours: '00',
@@ -90,8 +90,8 @@ function DealsOffer() {
       {/* Mobile Menu */}
       <div className='sm:hidden flex items-center justify-between gap-2 px-2'>
 
-        <div className='flex items-center justify-between gap-4'>
-          <p className="text-[18px] font-bold">Deals and Offers</p>
+        <div className='flex items-center justify-between gap-2'>
+          <p className="text-xl font-bold ">Deals and Offers</p>
           <div className='flex gap-2'>
             {[
               { label: 'Days', value: timeLeft.days },
@@ -107,19 +107,18 @@ function DealsOffer() {
           </div>
         </div>
 
-
       </div>
 
       {/* Product Blocks */}
-      <div className='bg-gray-100 sm:hidden flex items-stretch justify-between gap-2 rounded-md border border-gray-300 p-2 mt-4 max-w-7xl mx-auto overflow-x-auto scrollbar-hide'>
+      <div className='bg-gray-100 sm:hidden flex items-stretch justify-between gap-2 rounded-md border border-gray-300 p-2 mt-4 max-w-7xl  overflow-x-auto scrollbar-hide'>
         {dealOfferProducts.map((prod, i) => (
-          <Link to="/product-list" state={{category : prod.category.name}} key={i} className={`1sm:hidden flex flex-col items-center gap-2 w-2/12 min-w-[160px] h-full ${i===0 ? 'border-l-0' : 'border-l'} border-gray-300`}>
-            <div className='w-32 h-32'>
+          <Link to="/product-list" state={{category : prod.category.name}} key={i} className={`sm:hidden flex flex-col items-center  w-2/12 min-w-[160px] h-full ${i===0 ? 'border-l-0' : 'border-l'} border-gray-300`}>
+            <div className='w-32 h-32 mb-2'>
                 <img src={prod.image} alt={prod.name} className="w-full h-full object-cover rounded-md" />
             </div>
-            <p className="text-center w-3/4 font-medium truncate">{prod.name}</p>
+            <p className="text-center text-base w-3/4 font-medium truncate">{prod.name}</p>
             {timeLeft.days &&
-              <p className="text-red-500 text-center font-medium bg-red-200 px-2 py-1 text-[15px] rounded-full">
+              <p className="text-red-500 text-center text-sm  bg-red-200 px-2 py-1 text-[15px] rounded-full">
                 - {Math.round(((prod.oldPrice - prod.price) / prod.oldPrice * 100))}<span>%</span>
               </p>
             }

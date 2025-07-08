@@ -42,7 +42,8 @@ function SupplierQuote() {
     };
 
     const InquiryForm = (
-        <div className="bg-white rounded shadow-md p-6 flex flex-col gap-4">
+
+        <div className="rounded p-2 flex flex-col gap-4">
             <p className="text-xl font-bold text-gray-800">Send quote to Suppliers</p>
 
             <select
@@ -97,7 +98,7 @@ function SupplierQuote() {
     );
 
     return (
-        <div className="w-full sm:h-[400px] h-[200px] bg-[url('https://res.cloudinary.com/dophfzeep/image/upload/v1750439683/s-quote_wudret.jpg')] bg-contain bg-center relative mt-6 max-w-7xl sm:mx-auto mx-0 rounded overflow-hidden">
+        <div className="w-full sm:h-[400px] h-[200px] bg-[url('https://res.cloudinary.com/dophfzeep/image/upload/v1750439683/s-quote_wudret.jpg')] bg-contain bg-center relative mt-6 max-w-7xl sm:mx-auto  rounded overflow-hidden">
 
             <div className="absolute inset-0 bg-gradient-to-r from-sky-600/100 to-sky-300/80 z-0" />
 
@@ -121,17 +122,18 @@ function SupplierQuote() {
                         Send inquiry
                     </button>
                 </div>
-
                 {/* Desktop Form */}
                 <div className="w-1/2 bg-white rounded shadow-md p-2 ml-8  hidden sm:flex flex-col gap-2 max-w-md">
                     {InquiryForm}
                 </div>
             </div>
 
+
+
             {/* Mobile Form Modal */}
             {showMobileForm && (
                 <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4 sm:hidden">
-                    <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+                    <div className="bg-gray-100 rounded-lg shadow-lg w-full max-w-md p-6 relative">
                         <button
                             onClick={() => setShowMobileForm(false)}
                             className="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl font-bold"
@@ -142,7 +144,7 @@ function SupplierQuote() {
                     </div>
                 </div>
             )}
-            
+
         </div>
     );
 }

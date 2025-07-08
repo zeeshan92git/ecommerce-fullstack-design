@@ -1,7 +1,8 @@
-import { AiOutlineHome, AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineHome } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { BiCategoryAlt, BiWorld } from 'react-icons/bi';
 import { HiOutlineClipboardList } from 'react-icons/hi';
+import { TiMessages } from "react-icons/ti";
 import { MdOutlineContactSupport } from 'react-icons/md';
 import { TbInfoSquare } from 'react-icons/tb';
 import { RxCross2 } from 'react-icons/rx';
@@ -16,8 +17,10 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
   console.log({ token, userData });
 
   const navigate = useNavigate();
+  
   const handleLogout = () => {
     setToken(null);
+    localStorage.removeItem('token');
     setIsOpen(false);
     navigate("/");
     toast.success("Logged out successfully");
@@ -53,7 +56,7 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
         <div className='p-4 flex flex-col gap-6'>
           <SidebarItem icon={<AiOutlineHome />} path="/" label="Home" navigate={navigate} setIsOpen={setIsOpen} />
           <SidebarItem icon={<BiCategoryAlt />} path="/" label="Categories" navigate={navigate} setIsOpen={setIsOpen} />
-          <SidebarItem icon={<AiOutlineHeart />} path="/my-cart" label="Favorites" navigate={navigate} setIsOpen={setIsOpen} />
+          <SidebarItem icon={<TiMessages />} path="/my-messages" label="Messages" navigate={navigate} setIsOpen={setIsOpen} />
           <SidebarItem icon={<HiOutlineClipboardList />} path="/my-orders" label="My Orders" navigate={navigate} setIsOpen={setIsOpen} />
 
           <hr />

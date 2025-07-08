@@ -3,7 +3,8 @@ import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Navbar from '../components/navbar';
-import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 function Myprofile() {
 
@@ -47,7 +48,10 @@ function Myprofile() {
 
         <>
             <Navbar cart={true} />
-
+            <Link to="/" className='sm:hidden flex items-center gap-4 text-[24px] font-bold p-2 mt-2'>
+                <FaArrowLeftLong className='text-2xl' />
+                <h1>My Profile</h1>
+            </Link>
             {token ? (
                 <div className="max-w-3xl w-full mx-auto bg-gray-100 rounded-xl shadow-md shadow-gray-500 border border-stone-300 mt-6 p-8 space-y-6 text-sm text-gray-800">
 
@@ -187,6 +191,8 @@ function Myprofile() {
                 <div className="flex flex-col items-center justify-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 font-medium p-6 rounded-md shadow-sm mt-10 max-w-md mx-auto">
                     <p className="text-lg">🚫 Login to shop and make your profile</p>
                     <p className="text-sm text-blue-600">Please sign in to access your personalized shopping experience.</p>
+                    <Link to="/" className='sm:hidden block text-sm text-blue-500 underline underline-offset-2 font-medium'>Go to Home</Link>
+                    <Link to="/login" className='sm:hidden block text-sm text-blue-500 underline underline-offset-2'>Log in</Link>
                 </div>
 
             )

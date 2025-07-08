@@ -35,7 +35,7 @@ function ExtraServices() {
 
     return (
         <div className="bg-white">
-            <section className="max-w-7xl mx-auto px-4 py-6 bg-white">
+            <section className="max-w-7xl mx-auto sm:p-4 p-2 bg-white">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-5">Our Extra Services</h2>
 
                 <div className="grid grid-cols-2  lg:grid-cols-4 gap-6">
@@ -66,7 +66,7 @@ function ExtraServices() {
             </section>
 
 
-            <section className="max-w-7xl mx-auto px-4 py-6 mt-4 bg-white">
+            <section className="max-w-7xl mx-auto sm:p-4 p-2 mt-4 bg-white">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6">Suppliers by region</h2>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">

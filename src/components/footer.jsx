@@ -6,7 +6,7 @@ function Footer() {
         <div className='bg-gray-200 mt-6'>
 
             <div className='text-center px-4 py-8 sm:px-8'>
-                <div className="max-w-2xl mx-auto">
+                <div className="max-w-2xl ">
                     <p className="text-2xl sm:text-3xl font-bold mb-2">Subscribe to our newsletter</p>
                     <p className="text-gray-500 text-sm sm:text-base">
                         Get daily updates on upcoming offers from suppliers across the world
@@ -14,7 +14,7 @@ function Footer() {
                 </div>
 
                 {/* Input and Button */}
-                <div className="mt-6 flex flex-col sm:flex-row gap-3 items-center justify-center w-full max-w-xl mx-auto">
+                <div className="mt-6 flex flex-col sm:flex-row gap-3 items-center justify-center w-full max-w-xl">
                     <div className="relative w-full sm:w-auto flex-grow">
                         <FaRegEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
                         <input type="email" placeholder="Enter your email" className="pl-10 pr-4 py-2 w-full rounded-md bg-white outline-none border border-gray-300 text-base" />

@@ -22,15 +22,17 @@ function Hero() {
 
   const { token, setToken, userData } = useContext(AppContext);
   const navigate = useNavigate();
+
   const handleLogout = () => {
     setToken(null);
+    localStorage.removeItem('token');
     navigate("/");
     toast.success("Logged out successfully");
   };
 
   console.log("token at hero\n", token);
   return (
-    <div className="sm:bg-gray-100 sm:mt-4 mt-6 sm:p-4 p-0 sm:border border-gray-300 rounded-md max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 justify-between">
+    <div className="sm:bg-gray-100 sm:mt-4 mt-5 sm:p-4  sm:border border-gray-300 sm:rounded-md max-w-7xl sm:mx-auto flex flex-col sm:flex-row gap-4 justify-between">
 
       {/* Left Sidebar Categories */}
       <div className="w-full sm:w-1/5 hidden sm:flex flex-col gap-2">
@@ -50,17 +52,17 @@ function Hero() {
       </div>
 
       {/* Center Banner */}
-      <div className="relative w-full mx-0 sm:w-3/5 overflow-hidden rounded-md">
+      <div className="relative w-full sm:w-3/5 overflow-hidden sm:rounded-md">
         <img
           src="https://res.cloudinary.com/dophfzeep/image/upload/v1750439638/hero_psijcp.jpg"
           alt="Electronic items"
-          className="w-full h-full object-cover rounded-md"
+          className="w-full h-full object-cover sm:rounded-md"
         />
         <div className="absolute top-8 left-6 text-black">
           <p className="sm:text-xl text-lg">Latest trending</p>
           <p className={`sm:text-3xl text-xl font-bold`}>Electronic items</p>
           <p className='mt-4'>
-            <Link to="/product-list" state={{category : "Computer and Tech"}} className="bg-white text-black sm:px-4 sm:py-2 p-2 rounded-md shadow hover:bg-blue-200 hover:font-medium">
+            <Link to="/product-list" state={{ category: "Computer and Tech" }} className="bg-white text-black sm:px-4 sm:py-2 p-2 rounded-md shadow hover:bg-blue-200 hover:font-medium">
               Learn more
             </Link>
           </p>
@@ -69,11 +71,14 @@ function Hero() {
       </div>
 
       {/* Right User Section */}
-      <div className="w-full sm:w-1/5 hidden sm:flex flex-col gap-4">
+      <div className="w-full sm:w-1/5 hidden sm:flex  flex-col gap-8">
 
-        <div className="bg-sky-100 rounded-md shadow p-2 text-center">
+        <div className="bg-blue-100 rounded-md shadow p-2 text-center">
           <div className="flex justify-start items-start gap-1 mb-2">
-            {token ? <img className='w-8 h-8 rounded-full' src={userData.image}/> : <CgProfile className="text-4xl text-gray-400" />}
+            <div className='w-8 h-8 rounded-full'>
+              {token ? <img className='w-full h-full rounded-full' src={userData.image} alt="img" /> : <CgProfile className="text-4xl text-gray-400" />}
+            </div>
+
             <div className="flex flex-col items-start justify-start font-medium gap-1">
               {token ? (
                 <>
@@ -104,11 +109,11 @@ function Hero() {
 
         </div>
 
-        <div className="bg-orange-500 text-white p-4 rounded-md text-lg text-center">
+        <div className="bg-orange-500 text-white py-5 px-2 rounded-md text-lg text-center">
           Get US $10 off<br />with a new supplier
         </div>
 
-        <div className="bg-sky-400 text-white p-4 rounded-md text-lg text-center">
+        <div className="bg-sky-400 text-white  py-5 px-2 rounded-md text-lg text-center">
           Send quotes with<br />supplier preferences
         </div>
 
