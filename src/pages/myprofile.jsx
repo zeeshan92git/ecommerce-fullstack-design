@@ -191,8 +191,6 @@ function Myprofile() {
                 <div className="flex flex-col items-center justify-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 font-medium p-6 rounded-md shadow-sm mt-10 max-w-md mx-auto">
                     <p className="text-lg">🚫 Login to shop and make your profile</p>
                     <p className="text-sm text-blue-600">Please sign in to access your personalized shopping experience.</p>
-                    <Link to="/" className='sm:hidden block text-sm text-blue-500 underline underline-offset-2 font-medium'>Go to Home</Link>
-                    <Link to="/login" className='sm:hidden block text-sm text-blue-500 underline underline-offset-2'>Log in</Link>
                 </div>
 
             )

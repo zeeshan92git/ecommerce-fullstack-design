@@ -32,7 +32,7 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
     return (
         <div className='mx-2'>
             {/* Top Navbar Row */}
-            <div className={`flex sm:hidden items-center justify-between  mt-2 ${showSelection ? '' : 'mt-0 p-0'}  w-full`}>
+            <div className={`flex sm:hidden items-center justify-between  mt-2 ${showSelection ? '' : 'mt-0 p-0 '}  w-full`}>
 
                 <div className='flex items-center gap-2'>
                     {showBackArrow ? (

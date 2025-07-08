@@ -298,7 +298,7 @@ function Cart() {
                 </div>
 
                 {/* product list mobile view */}
-                <div className='sm:hidden flex flex-col gap-2 border-t border-stone-400 p-2 mb-4 mx-4'>
+                <div className='sm:hidden flex flex-col gap-2 border-t border-stone-400 p-2 mb-4 mx-2'>
                     {cartItems.length === 0 ? (
                         <p className='p-6 text-stone-500 text-[10px]'>
                             Empty Cart? <strong>Go BACK TO SHOP !!!</strong>
@@ -427,10 +427,10 @@ function Cart() {
                 </div>
 
                 {/* saved for later for mobile */}
-                <div className="sm:hidden border border-stone-300 rounded p-3 w-full mb-6 bg-gray-100">
+                <div className="sm:hidden border border-stone-300 rounded p-3 w-full mb-6 bg-white">
                     <h1 className="text-xl font-bold mb-4">Saved For Later</h1>
 
-                    <div className="flex flex-col gap-4 bg-white p-2 rounded">
+                    <div className="flex flex-col gap-4 bg-gray-50 p-2 rounded">
                         {savedItems.length === 0 ?
                             <p className='p-4 text-stone-500 text-sm'>No products found!!!</p>
                             : savedItems.map((prod, indx) => (

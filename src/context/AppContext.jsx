@@ -12,9 +12,9 @@ const AppContextProvider = (props) => {
     //console.log("Backend URL is:", backEndURL);
 
     const [token, setToken] = useState(() => localStorage.getItem('token') || false);
-    console.log("token at appcontext\n",token);
+    console.log("token at appcontext\n", token);
     const [categoriesData, setCategoriesData] = useState([]);
-    const [productsData , setProductsData] = useState([]);
+    const [productsData, setProductsData] = useState([]);
     const [userData, setuserData] = useState(false);
 
     const getCategoriesData = async () => {
@@ -55,12 +55,12 @@ const AppContextProvider = (props) => {
 
     const getuserProfileData = async () => {
         try {
-            const {data} = await axios.get(backEndURL + '/api/user/get-profile', { headers: { token } });
+            const { data } = await axios.get(backEndURL + '/api/user/get-profile', { headers: { token } });
             if (data.success) {
-                console.log("User Data fetched",data);
+                console.log("User Data fetched", data);
                 setuserData(data.data);
             } else {
-                console.log("User Data not found" , data.message);
+                console.log("User Data not found", data.message);
                 toast.error(data.message);
             }
         } catch (error) {
@@ -69,23 +69,27 @@ const AppContextProvider = (props) => {
         }
     };
 
-    const value = { categoriesData, setCategoriesData, productsData , getProductsData ,getCategoriesData
-         , backEndURL , token, setToken ,userData, setuserData , getuserProfileData};
+    const value = {
+        categoriesData, setCategoriesData, productsData, getProductsData, getCategoriesData
+        , backEndURL, token, setToken, userData, setuserData, getuserProfileData
+    };
 
     useEffect(() => {
-        getCategoriesData();
-    }, []);
+        if (token)
+            getCategoriesData();
+    }, [token]);
 
     useEffect(() => {
-        getProductsData();
-    },[]);
+        if (token)
+            getProductsData();
+    }, [token]);
 
     useEffect(() => {
         if (token) {
             getuserProfileData();
             console.log("user profile data got by useeffect bcz of token\n");
         }
-        else{
+        else {
             setuserData(false);
         }
     }, [token])

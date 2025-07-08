@@ -83,7 +83,7 @@ function ProductDeatils() {
     return (
         <>
             <Navbar cart={false} />
-            <div className='max-w-7xl sm:mx-24 mx-8 mt-4'>
+            <div className='max-w-7xl sm:mx-24 mx-4 mt-4'>
                 <p className='text-stone-400 text-[18px] font-normal mb-6 sm:flex hidden gap-2 items-center'>
                     Home  <PiGreaterThanBold /> Categories <PiGreaterThanBold />  {product.category.name} <PiGreaterThanBold /> {product.name}
                 </p>

@@ -4,19 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     font-family: "Roboto";
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-.active hr{
-    @apply block
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-::-webkit-scrollbar{
-    @apply hidden
+body::-webkit-scrollbar-track {
+    background: #e0f7ff;
 }
 
+body::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9;
+}
