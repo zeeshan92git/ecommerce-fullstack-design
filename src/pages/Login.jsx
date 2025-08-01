@@ -45,16 +45,13 @@ function Login() {
         }
     };
 
-    useEffect(() => {
-        if (token) {
-            navigate('/');
-        }
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, [token, navigate]);
+    const handleNavigate = () => {
+        navigate("/");
+    }
 
     return (
 
-        <div className="relative min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-200">
+        <div className="relative min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-200 animate-fade-in">
 
             {/* Background Image */}
             <div
@@ -64,12 +61,15 @@ function Login() {
 
             {/* Centered Form Container */}
             <div className="absolute inset-0 flex items-center justify-center z-10 p-4">
+
                 <form
                     onSubmit={onSubmitHandler}
                     className="backdrop-blur-md bg-white/80 shadow-xl rounded-2xl p-8 max-w-md w-full border border-blue-200"
                 >
+                    <p onClick={handleNavigate} className='text-end cursor-pointer'>&times;</p>
                     <h2 className="text-3xl font-bold text-center mb-2 text-blue-700">
                         {state === 'Sign Up' ? "Create Account" : "Welcome Back"}
+
                     </h2>
                     <p className="text-center text-gray-600 mb-6 text-sm">
                         {state === 'Sign Up' ? "Sign up to start your journey" : "Login to continue shopping"}
@@ -140,8 +140,10 @@ function Login() {
                             </>
                         )}
                     </p>
+
                 </form>
             </div>
+
         </div>
 
 
