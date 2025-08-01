@@ -8,7 +8,8 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
 
-    const backEndURL = import.meta.env.VITE_BACKEND_URL;
+    const backEndURL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
     //console.log("Backend URL is:", backEndURL);
 
     const [token, setToken] = useState(() => localStorage.getItem('token') || false);
@@ -77,17 +78,12 @@ const AppContextProvider = (props) => {
     useEffect(() => {
         if (token)
             getCategoriesData();
-    }, [token]);
-
-    useEffect(() => {
-        if (token)
-            getProductsData();
+        getProductsData();
     }, [token]);
 
     useEffect(() => {
         if (token) {
             getuserProfileData();
-            console.log("user profile data got by useeffect bcz of token\n");
         }
         else {
             setuserData(false);
