@@ -30,8 +30,8 @@ function Messages() {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <p className="flex items-center gap-2 text-2xl font-semibold mb-6 text-gray-800">
+    <div className="max-w-4xl mx-auto p-4">
+      <p className="flex items-center justify-between gap-6 sm:text-2xl text-xl font-semibold mb-6 text-gray-800 w-full">
         <Link to="/"><FaArrowLeftLong /></Link>
          Order Messages
       </p>

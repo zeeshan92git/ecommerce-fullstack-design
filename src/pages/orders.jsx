@@ -31,8 +31,8 @@ function Orders() {
     }, []);
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8">
-            <p className="flex items-center gap-2 text-2xl font-bold mb-4">
+        <div className="max-w-6xl mx-auto px-4 py-4">
+            <p className="flex items-center justify-between gap-6 sm:text-2xl text-xl font-bold mb-4 w-full">
                 <Link to="/"><FaArrowLeftLong/></Link>
                 My Orders
             </p>

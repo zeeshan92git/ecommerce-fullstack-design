@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { MdMenu } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { CgProfile } from "react-icons/cg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, useNavigate } from 'react-router-dom';
+import { RiMenuUnfold3Line } from "react-icons/ri";
 import MobileSidebar from './mobile-sidebar';
 import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
@@ -42,7 +42,7 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
                         </>
                     ) : (
                         <>
-                            <MdMenu className='text-2xl ' onClick={() => setIsOpen(true)} />
+                            <RiMenuUnfold3Line onClick={() => setIsOpen(true)} className='text-2xl text-black'/>
                             <div className="flex items-center gap-1">
                                 <div className="bg-blue-500 p-1 rounded">
                                     <LiaShoppingBagSolid className="text-[20px]  text-sky-400" />
@@ -74,15 +74,16 @@ function MobileNavbar({ showBackArrow = false, categoryName = "", route = "", sh
                     <IoIosSearch className='text-lg text-stone-400' />
                     <input
                         type="text"
-                        placeholder='Search'
-                        className='flex-1 text-sm text-gray-700 placeholder-stone-400 outline-none'
+                        placeholder='Search --- option coming soon'
+                        disabled
+                        className='flex-1 text-sm text-gray-700 placeholder-stone-400 outline-none italic'
                     />
                 </div>
             }
 
             {/* Categories Row */}
             {showSelection &&
-                <div className='sm:hidden mt-4  flex items-center overflow-x-auto gap-2 p-1'>
+                <div className='sm:hidden mt-4  flex items-center overflow-x-auto gap-2 p-1 scrollbar-hide'>
                     {categories.map((cat, index) => (
                         <button
                             key={index}

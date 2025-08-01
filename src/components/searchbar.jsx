@@ -24,8 +24,9 @@ function SearchBar() {
         <div className="flex flex-1 max-w-xl border-2 border-blue-500 rounded-md relative">
             <input
                 type="text"
-                placeholder="Search"
-                className="p-2 flex-grow text-[16px] text-gray-700 rounded-md outline-none"
+                placeholder="Search --- option coming soon"
+                disabled
+                className="p-2 flex-grow text-[16px] text-gray-700 rounded-md outline-none italic"
             />
 
             {/* All category selector with dropdown */}
@@ -65,7 +66,7 @@ function SearchBar() {
                 )}
             </div>
 
-            <button className="bg-blue-500 text-white px-4">Search</button>
+            <button disabled className="bg-blue-500 text-white px-4">Search</button>
         </div>
 
     );

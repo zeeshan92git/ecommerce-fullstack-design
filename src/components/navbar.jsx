@@ -11,6 +11,7 @@ import { MdMenu } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext.jsx';
 import { Navigate } from 'react-router-dom';
+
 const languages = [
     "English, USD",
     "Urdu, PKR",

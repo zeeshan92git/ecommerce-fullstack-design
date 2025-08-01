@@ -5,7 +5,7 @@ import { HiOutlineClipboardList } from 'react-icons/hi';
 import { TiMessages } from "react-icons/ti";
 import { MdOutlineContactSupport } from 'react-icons/md';
 import { TbInfoSquare } from 'react-icons/tb';
-import { RxCross2 } from 'react-icons/rx';
+import { RiMenuFold3Line } from "react-icons/ri";
 import {  useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
@@ -39,7 +39,7 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
       )}
 
       {/* Sidebar Drawer */}
-      <div className={`fixed top-0 left-0 h-full w-72 bg-gray-100 shadow-md z-50 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed top-0 left-0 h-full w-72 bg-gray-100 shadow-md z-50  duration-300  ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className='flex justify-between items-center p-4 border-b'>
           <div className="flex items-center gap-2">
             {userData && userData.image ? (<img src={userData.image} alt={userData.name} className='w-6 h-6 rounded-full' />)
@@ -50,7 +50,7 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
               :
               (<span onClick={handleLogin} className='text-gray-700 text-[20px]'>Sign in | Register</span>)}
           </div>
-          <RxCross2 className='text-xl cursor-pointer' onClick={() => setIsOpen(false)} />
+          <RiMenuFold3Line className='text-xl text-black cursor-pointer' onClick={() => setIsOpen(false)} />
         </div>
 
         <div className='p-4 flex flex-col gap-6'>
@@ -71,6 +71,7 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
           <SidebarItem label="Partnership" />
           <SidebarItem label="Privacy Policy" />
         </div>
+
       </div>
     </>
   );
